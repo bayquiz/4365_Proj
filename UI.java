@@ -58,6 +58,15 @@ public class UI {
                     innerChoice2();
                     //System.out.println("Would you like to checkout?");
                     break;
+                case 3:
+                    System.out.println("not functioning yet...");
+
+                    break;
+
+                case 4:
+                    BankAccount.bank();
+                    menu();
+
                 case 0:
                     System.exit(0);
                     break;
