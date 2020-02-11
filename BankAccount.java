@@ -26,16 +26,17 @@ public class BankAccount {
 		System.out.println("Enter balance: ");
 		 b.balance= input.nextInt();
 		b.getBalance();
-		
-		 System.out.println("Menu");
-		 System.out.println("1.Deposit");
-		 System.out.println("2.Withdraw");
-		 System.out.println("3.Display all");
-		 System.out.println("4.Exit");
 		 boolean q= false;
 		 int choice;
 		 
+		 
 		 do {
+			 System.out.println("Menu");
+			 System.out.println("1.Deposit");
+			 System.out.println("2.Withdraw");
+			 System.out.println("3.Display all");
+			 System.out.println("4.Exit");
+			
 			 System.out.println("Enter your choice: ");
 			 choice= input.nextInt();
 			 
@@ -183,3 +184,4 @@ public void displayAll() {
 	
 
 }
+
