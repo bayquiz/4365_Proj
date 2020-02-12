@@ -160,7 +160,7 @@ public class UI {
     private void showCart() {
 
         cart.printCartItems();
-        System.out.println("Your total is: ");
+      //  System.out.println("Your total is: ");
         cart.calculateCartTotal();
         System.out.println("$$$$$$$$$$$$$$$$  end of your cart    $$$$$$$$$$$$$$$$$$");
     }
