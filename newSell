@@ -1,0 +1,68 @@
+//package collections.shoppingcart
+
+import java.util.Objects;
+
+public class Main{
+    public static void main (String [] args){
+        new UI ();
+    }
+
+} 
+class Product {
+    private int barcode;
+    private String name;
+    private Double cost;
+    private int itemQuantity;
+
+    public Product () {
+    }
+
+    public Product ( int barcode, String name, Double cost, int itemQuantity ){
+
+        this.barcode = newBarcode;
+        this.name = newName;
+        this.cost = newCost;
+        this.itemQuantity = newItemQuantity;
+    }
+
+    public String getName(){
+        return newName;
+    }
+
+    public void setName (String newName) {
+        this.name = newName;
+    }
+
+    public double getCost () {
+        return newCost;
+    }
+
+    public void setCost (Double cost){
+        this.cost = newCost;
+    }
+
+    public int getQuantity (){
+        return newItemQuantity;
+    }
+
+    public void  setQuantity (int itemQuantity) {
+        this.itemQuantity = newItemQuantity ;
+    }
+
+    public Integer getBarcode() {
+        return barcode;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 29 * hash + Objects.hashCode(this.barcode);
+        hash = 29 * hash + Objects.hashCode(this.name);
+        hash = 29 * hash + Objects.hashCode(this.cost);
+        hash = 29 * hash + Objects.hashCode(this.itemQuantity);
+        return hash;
+    }
+
+ 
+
+}
