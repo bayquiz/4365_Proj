@@ -16,9 +16,9 @@ public class Products {
     }
 
     public void initStoreItems() {
-        String [] productNames = {"ART1301", "CS4365", "MATH2336", "ARCH2331"};
-        Double [] productPrice = {40.00d, 60.00d, 30.00d, 15.99d};
-        Integer [] stock = {10, 6, 10, 2};
+        String [] productNames = {"ART1301", "CS4365", "MATH2336", "ARCH2331", "ECE2306"};
+        Double [] productPrice = {40.00d, 60.00d, 30.00d, 15.99d, 19.99d};
+        Integer [] stock = {10, 6, 10, 2, 4};
 
         for (int i=0; i < productNames.length; i++) {
             this.products.add(new Product(i+1, productNames[i], productPrice[i], stock[i]));

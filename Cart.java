@@ -38,15 +38,35 @@ class Cart {
     private boolean isOutofStock(int stock){
         return(stock -1) < 0;
     }
+
     public double calculateCartTotal(){
         double total = 0.00d;
         for(Product prod: cartItems){
             total += prod.getPrice();
-            System.out.println("Your total is:      $" + total);
+          //  System.out.println("Your CART total is:      $" + total);
+          //  System.out.println("Your CART total is:  $" + total);
         }
+        //System.out.println("Your cart total is: $" + total);
         return total;
         //System.out.println("$" + total);
     }
+    public void checkOut() {
+        double leftover = 0.00d;
+        System.out.println("Your total today is: $" + calculateCartTotal());
+        if(BankAccount.getBalance() > calculateCartTotal()) {
+            System.out.println("Process complete! You have sufficient funds!");
+        }
+        else {
+            leftover = calculateCartTotal() - BankAccount.getBalance();
+            System.out.println("You owe $" + leftover + " . Please pay with a credit card!");
+            CreditCardVerification.card_ask();
+        }
+    }
+
+
+  //  public void printTotal(double total) {
+        //System.out.println("Your cart total is: $" + total)
+    //}
     void printCartItems() {
         System.out.println("$$$$$$$$$$$$$$$  YOUR CART  $$$$$$$$$$$$$$$");
         for (Product prod: cartItems) {

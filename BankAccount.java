@@ -10,8 +10,8 @@ import java.util.Scanner;
 
 public class BankAccount {
     Scanner input= new Scanner(System.in);
-    private int balance;
-    private String CustName;
+    private static int balance;
+    private static String CustName;
     private int Id;
 
 
@@ -75,7 +75,7 @@ public class BankAccount {
         return CustName;
     }
 
-    public double getBalance() {
+    public static double getBalance() {
         return balance;
     }
 
@@ -83,7 +83,7 @@ public class BankAccount {
         return Id;
     }
 
-    public void setCustName(String name) {
+    public static void setCustName(String name) {
         CustName=name;
     }
 
@@ -169,7 +169,7 @@ public class BankAccount {
         balance =balance - amount;
     }
 
-    public void displayBlance() {
+    public static void displayBlance() {
         System.out.println("Bank Account: "+CustName);
         System.out.println("The amount in the account is: "+balance);
 

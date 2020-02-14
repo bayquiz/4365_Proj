@@ -1,5 +1,8 @@
 package collections.shoppingcart;
 import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+import java.util.Date;
 
 class CreditCardVerification
 {
@@ -28,6 +31,36 @@ class CreditCardVerification
         return (sum % 10 == 0);
     }
 
+    public static boolean validateDate(String strDate)
+    {
+        if (strDate.trim().equals(""))
+        {
+            return true;
+        }
+
+        else
+        {
+            SimpleDateFormat sdfrmt = new SimpleDateFormat("MM/yyyy");
+            sdfrmt.setLenient(false);
+
+            try
+            {
+                Date javaDate = sdfrmt.parse(strDate);
+            }
+
+            catch (ParseException e)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+    }
+
+
+
+
     public static void card_ask()
     {
         Scanner input = new Scanner(System.in);
@@ -53,16 +86,45 @@ class CreditCardVerification
 
                     if (String.valueOf(cvvNo).length() == MAX_LENGTH)
                     {
-                        System.out.println("Valid CVV number");
+                        System.out.println("Valid CVV number\n");
+
+                        Scanner input3 = new Scanner(System.in);
+
+                        System.out.println("Please enter expiration date (MM/YYYY)");
+                        while (true)
+                        {
+                            String strDate = input.nextLine();
+
+                            if (validateDate(strDate))
+                            {
+                                System.out.println ("Valid Date\n");
+
+                                System.out.println("CREDIT CARD INFORMATION");
+                                System.out.println("-----------------------");
+                                System.out.println("Card Number: " + cardNo);
+                                System.out.println("CVV: " + cvvNo);
+                                System.out.println("Date: " + strDate);
+                                break;
+                            }
+
+                            else
+                            {
+                                System.out.println("Invalid Date. Please try again");
+                            }
+                        }
                         break;
                     }
                     else
+                    {
                         System.out.println("Invalid CVV number. Please enter 3 digits only.");
+                    }
                 }
-                break; // Breaks the loop
+                break;
             }
             else
+            {
                 System.out.println("Invalid card number. Please try again.");
+            }
         }
     }
 }

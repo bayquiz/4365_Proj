@@ -32,37 +32,26 @@ class Product {
         this.name = name;
     }
 
-    /**
-     * @return the price
-     */
+
     public Double getPrice() {
         return price;
     }
 
-    /**
-     * @param price the price to set
-     */
+
     public void setPrice(Double price) {
         this.price = price;
     }
 
-    /**
-     * @return the stock
-     */
+
     public Integer getStock() {
         return stock;
     }
 
-    /**
-     * @param stock the stock to set
-     */
     public void setStock(Integer stock) {
         this.stock = stock;
     }
 
-    /**
-     * @return the pid
-     */
+
     public Integer getPid() {
         return pid;
     }
@@ -104,9 +93,7 @@ class Product {
         return true;
     }
 
-    /**
-     * @param pid the pid to set
-     */
+
     public void setPid(Integer pid) {
         this.pid = pid;
     }
