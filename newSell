@@ -19,34 +19,34 @@ class Product {
 
     public Product ( int barcode, String name, Double cost, int itemQuantity ){
 
-        this.barcode = newBarcode;
-        this.name = newName;
-        this.cost = newCost;
-        this.itemQuantity = newItemQuantity;
+        this.barcode = barcode;
+        this.name = name;
+        this.cost = cost;
+        this.itemQuantity = itemQuantity;
     }
 
     public String getName(){
-        return newName;
+        return name;
     }
 
-    public void setName (String newName) {
-        this.name = newName;
+    public void setName (String name) {
+        this.name = name;
     }
 
     public double getCost () {
-        return newCost;
+        return cost;
     }
 
     public void setCost (Double cost){
-        this.cost = newCost;
+        this.cost = cost;
     }
 
     public int getQuantity (){
-        return newItemQuantity;
+        return itemQuantity;
     }
 
     public void  setQuantity (int itemQuantity) {
-        this.itemQuantity = newItemQuantity ;
+        this.itemQuantity = itemQuantity ;
     }
 
     public Integer getBarcode() {
