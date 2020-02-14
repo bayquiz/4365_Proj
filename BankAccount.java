@@ -90,6 +90,8 @@ public class BankAccount {
     public void setId(int p) {
         Id=p;
     }
+
+
     public static boolean checkCard(String cardNo)
     {
         int number = cardNo.length();
@@ -117,7 +119,7 @@ public class BankAccount {
 
 
     public void deposit() {
-        Scanner input = new Scanner(System.in);
+     /*   Scanner input = new Scanner(System.in);
 
         System.out.println("Enter your Credit Card Number");
 
@@ -151,7 +153,8 @@ public class BankAccount {
             else
                 System.out.println("Invalid card number. Please try again.");
         }
-
+        */
+        CreditCardVerification.card_ask();
         System.out.println("Enter amount to deposit: ");
         int amount;
         amount=input.nextInt();
