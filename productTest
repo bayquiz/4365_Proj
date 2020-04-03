@@ -1,0 +1,80 @@
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
+
+
+class ProductTest {
+    Product shirt = new Product(123456,"Yellow Halter Top",5.99,2); // instance of the object shirt
+    Product pants = new Product(789012, "Ripped Jeans",25.99,12); // instance of the object pants
+
+    /*assertEquals("Yellow Halter Top", shirt.getName());
+    assertEquals(5.99, shirt.getPrice());
+
+    assertEquals("Ripped Jeans",pants.getName());
+    assertEquals(25.99, pants.getPrice());
+
+
+    shirt.setName("Purple Halter Top");
+    assertEquals("Purple Halter Top", getName());
+
+    shirt.setPrice(8.99);
+    assertEquals(8.99, shirt.getPrice());
+
+    //Don't mind everything below this comment. I wanted to attempt something else
+
+     */
+
+    /*@BeforeEach
+    void setUp() {
+        this.shirt = new Product();
+    }
+
+    @AfterEach
+    void tearDown() {
+    }
+
+    @Test
+    void getName() {
+    }
+
+    @Test
+    void setName() {
+        shirt.setName("Yellow Halter Top");
+    }
+
+    @Test
+    void getPrice() {
+    }
+
+    @Test
+    void setPrice() {
+        shirt.setPrice(5.99);
+    }
+
+    @Test
+    void getStock() {
+    }
+
+    @Test
+    void setStock() {
+        shirt.setStock(2);
+    }
+
+    @Test
+    void getPid() {
+    }
+
+    @Test
+    void testHashCode() {
+    }
+
+    @Test
+    void testEquals() {
+    }
+
+    @Test
+    void setPid() {
+        shirt.setPid(123456);
+    }*/
