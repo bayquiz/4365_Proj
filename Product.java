@@ -1,100 +1,111 @@
-package collections.shoppingcart;
+//package com.bitwise.models;
+package product;
+//import com.bitwise.exceptions.OutOfStockException;
+import lombok.Data;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-import java.util.Objects;
+@Data
+@Entity
 
-
-class Product {
-    private Integer pid;
-    private String name;
-    private Double price;
+public class Product {
+    private @Id @GeneratedValue Integer PID;
+    private String prodName;
+    private Double prodPrice;
+    private String supplier;
     private Integer stock;
 
-    public Product () {
-    }
+    public Product () {}
 
-    public Product (Integer pid, String name, Double price, Integer stock) {
-        this.pid = pid;
-        this.name = name;
-        this.price = price;
+    public Product (String prodName, Double prodPrice,
+                    String supplier, Integer stock) {
+      //  this.PID = pid;
+        this.prodName = prodName;
+        this.prodPrice = prodPrice;
+        this.supplier = supplier;
         this.stock = stock;
     }
-
-     // @return the name
-
-    public String getName() {
-        return name;
+/*
+    public Integer getPID() {
+        return PID;
     }
-
-
-     // @param name the name to set
-
-    public void setName(String name) {
-        this.name = name;
+    public void setPID(Integer pID) {
+        PID = pID;
     }
-
-
-    public Double getPrice() {
-        return price;
+    */
+    public String getProdName() {
+        return prodName;
     }
-
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-
-    public Integer getStock() {
-        return stock;
-    }
-
-    public void setStock(Integer stock) {
-        this.stock = stock;
-    }
-
-
-    public Integer getPid() {
-        return pid;
-    }
-
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.pid);
-        hash = 29 * hash + Objects.hashCode(this.name);
-        hash = 29 * hash + Objects.hashCode(this.price);
-        hash = 29 * hash + Objects.hashCode(this.stock);
-        return hash;
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((PID == null) ? 0 : PID.hashCode());
+        result = prime * result + ((prodName == null) ? 0 : prodName.hashCode());
+        result = prime * result + ((prodPrice == null) ? 0 : prodPrice.hashCode());
+        result = prime * result + ((stock == null) ? 0 : stock.hashCode());
+        result = prime * result + ((supplier == null) ? 0 : supplier.hashCode());
+        return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
             return true;
-        }
-        if (obj == null) {
+        if (obj == null)
             return false;
-        }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
             return false;
-        }
-        final Product other = (Product) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        Product other = (Product) obj;
+        if (PID == null) {
+            if (other.PID != null)
+                return false;
+        } else if (!PID.equals(other.PID))
             return false;
-        }
-        if (!Objects.equals(this.pid, other.pid)) {
+        if (prodName == null) {
+            if (other.prodName != null)
+                return false;
+        } else if (!prodName.equals(other.prodName))
             return false;
-        }
-        if (!Objects.equals(this.price, other.price)) {
+        if (prodPrice == null) {
+            if (other.prodPrice != null)
+                return false;
+        } else if (!prodPrice.equals(other.prodPrice))
             return false;
-        }
-        if (!Objects.equals(this.stock, other.stock)) {
+        if (stock == null) {
+            if (other.stock != null)
+                return false;
+        } else if (!stock.equals(other.stock))
             return false;
-        }
+        if (supplier == null) {
+            if (other.supplier != null)
+                return false;
+        } else if (!supplier.equals(other.supplier))
+            return false;
         return true;
     }
 
-
-    public void setPid(Integer pid) {
-        this.pid = pid;
+    public void setProdName(String prodName) {
+        this.prodName = prodName;
+    }
+    public Double getProdPrice() {
+        return prodPrice;
+    }
+    public void setProdPrice(Double prodPrice) {
+        this.prodPrice = prodPrice;
+    }
+    public String getSupplier() {
+        return supplier;
+    }
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
+    }
+    public Integer getStock() {
+        return stock;
+    }
+    public void setStock(Integer stock) {
+        this.stock = stock;
     }
 }
+
